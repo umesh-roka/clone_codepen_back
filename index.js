@@ -8,7 +8,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({origin:'http://localhost:3000',credentials:true }));
+app.use(cors({})); 
+
+// origin:'http://localhost:3000',credentials:true
+
 mongoose.connect('mongodb+srv://umeshrokamagar68:magar123@cluster0.fvlaut4.mongodb.net/codepen').then((val)=>{
   app.listen(port,()=>{
     console.log('connected server is running ');
@@ -17,8 +20,6 @@ mongoose.connect('mongodb+srv://umeshrokamagar68:magar123@cluster0.fvlaut4.mongo
 
 
 app.get('/',(req,res)=>{
-
-
 
 
   return res.status(200).json({
